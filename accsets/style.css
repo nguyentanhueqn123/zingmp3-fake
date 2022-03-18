@@ -32,13 +32,22 @@ nav{
   position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
   top: 0; /*Nằm trên cùng*/
   left: 0; /*Nằm sát bên trái*/
-  z-index: 10000; /*Hiển thị lớp trên cùng*/
+  z-index: 100; /*Hiển thị lớp trên cùng*/
   
+}
+nav .menu{
+  position: relative;
 }
 
 nav ul li{
-  margin-left: 28px;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
   
+}
+
+nav ul li a{
+  margin-left: 28px;
 }
 
 nav ul li, a{
@@ -46,10 +55,18 @@ nav ul li, a{
   line-height: 40px;
   font-weight: bold;
 }
-
-nav ul li a:hover{
+nav ul li.active{
+  background: #432275;
+  border-left: 2px solid #8B8791;
+}
+nav ul li:nth-child(3) a{
   color: #fff;
 }
+
+ nav ul li:hover a{
+  color: #fff;
+} 
+
 
 ion-icon {
   font-size: 22px;
@@ -71,7 +88,9 @@ nav .menu .bar-row{
   width: 185px;
   border-top: 1px solid rgb(99, 92, 98);
   margin: 10px 0;
+  margin-left: 28px;
 }
+
 
 .menu .live{
   background-color: red; 
@@ -89,8 +108,10 @@ nav .menu .bar-row{
   height: 110px;
   width: 202px;
   border-radius: 10px;
-  margin-left: -10px;
   margin-top: 10px;
+  margin-left: 18px;
+
+  
 }
 
 .menu .discrip{
@@ -135,7 +156,7 @@ nav .menu .bar-row{
   color: #fff;
   position:fixed;
   left: 0;
-  bottom: 6.6em;
+  bottom: 7em;
   border-top: 1px solid rgb(99, 92, 98);
   width: calc(242px + 24px);
   margin-left: -28px; 

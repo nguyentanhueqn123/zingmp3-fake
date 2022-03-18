@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
 </head>
 <body>
+    
+    
     <nav>
+        
         <div class="menu">
            <ul>
                 <li><a href="" ><img class="img-logo"  src="./accsets/img/logo1.png" alt=""></a></li>
@@ -20,7 +23,7 @@
                     Cá Nhân</a>
                 </li>
 
-                <li><a href="#" title="Khám Phá">
+                <li class="active"><a href="#" title="Khám Phá">
                     <ion-icon name="disc-outline"></ion-icon>
                     Khám Phá</a>
                 </li>
@@ -77,7 +80,9 @@
                     </p>
                 </a>
                 </li>
+
            </ul>
+
         </div>
 
     </nav>
@@ -903,6 +908,8 @@
         
     </footer>
 
+    
+
     <!-- slide img top  -->
     <script>
         var slideIndex = 1;
@@ -965,6 +972,8 @@
         document.querySelector(".layers").addEventListener("click",
             function(){
             z = z < color3.length ? ++z : 0;
+        document.querySelector(".active").style.background= color3[j]
+
         document.querySelector(".subnav").style.background= color3[j]
         document.querySelector(".subnav-child").style.background= color3[j]
         document.querySelector(".subnav-child2").style.background= color3[j]
