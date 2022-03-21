@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
 </head>
 <body>
+    
     <nav>
         <div class="menu">
            <ul>
@@ -64,7 +65,64 @@
                             Nghe nhạc không quảng cáo
                             cùng kho nhạc VIP
                         </p>
-                        <button class="btn">NÂNG CẤP VIP</button>
+                        <button class="btn" id="myBtn">NÂNG CẤP VIP</button>
+                        <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="ctn-modal">
+                                    <img class="logo-modal" src="./accsets/img/iconlogo.png" alt="">
+                                </div>
+
+                                <div class="ctn-modal">
+                                    <h1>Âm nhạc không giới hạn</h1>
+                                </div>
+
+                                <div class="ctn-modal">
+                                    <img class="vip-month" src="./accsets/img/6month.jpg" alt="">
+                                    <img class="vip-month" src="./accsets/img/1year.jpg" alt="">
+                                    <img class="vip-month" src="./accsets/img/2years.jpg" alt="">
+
+                                </div>
+                                <div class="ctn-modal">
+                                    <img class="vipcode" src="./accsets/img/vipcode.jpg" alt="">
+
+                                </div>
+                             
+
+
+                            </div>
+                          
+                        </div>
+                        
+                        <!-- js của modal  -->
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById("myModal");
+                            
+                            // Get the button that opens the modal
+                            var btn = document.getElementById("myBtn");
+                            
+                            // Get the <span> element that closes the modal
+                            var span = document.getElementsByClassName("close")[0];
+                            
+                            // When the user clicks the button, open the modal 
+                            btn.onclick = function() {
+                              modal.style.display = "block";
+                            }
+                            
+                            // When the user clicks on <span> (x), close the modal
+                            span.onclick = function() {
+                              modal.style.display = "none";
+                            }
+                            
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modal) {
+                                modal.style.display = "none";
+                              }
+                            }
+                        </script>
 
                     </div>
                 </li>
@@ -225,48 +283,81 @@
             <div class="dashboard">
 
               <!-- Header -->
-              <header1>
+                <header1>
                 <h4>Đang Phát :</h4>
                 <h2>hue nguyen</h2>
-              </header1>
+                </header1>
           
               <!-- CD -->
-              <div class="cd">
+                <div class="cd">
                 <div class="cd-thumb">
                 </div>
-              </div>
+                </div>
               
               <!-- Control -->
-              <div class="control">
+                <div class="control">
                 <div class="btn btn-repeat">
-                  <i class="fas fa-redo"></i>
+                    <i class="fas fa-redo"></i>
                 </div>
     
                 <div class="btn btn-prev">
-                  <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-step-backward"></i>
                 </div>
     
                 <div class="btn btn-toggle-play">
-                  <i class="fas fa-pause icon-pause"></i>
-                  <i class="fas fa-play icon-play"></i>
+                    <i class="fas fa-pause icon-pause"></i>
+                    <i class="fas fa-play icon-play"></i>
                 </div>
     
                 <div class="btn btn-next">
-                  <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-step-forward"></i>
                 </div>
     
                 <div class="btn btn-random">
-                  <i class="fas fa-random"></i>
+                    <i class="fas fa-random"></i>
                 </div>
-              </div>
+                </div>
 
-              <div class="control-sub">
-                <ion-icon class="icon v" name="tv-outline"></ion-icon>
-                <ion-icon class="icon g" name="eyedrop-outline"></ion-icon>
-                <ion-icon class="icon gf" name="volume-medium-outline"></ion-icon>
-                <input class="icon volume" type="range" step="1" value="0" min="0" max="100" required>
-                <ion-icon class="icon options" name="options-outline"></ion-icon>
-              </div>
+                <div class="control-sub">
+
+                    <ion-icon class="icon name1" name="tv-outline"></ion-icon>
+                    <ion-icon class="icon name2" name="eyedrop-outline"></ion-icon>
+                    <ion-icon class="icon name3" name="volume-medium-outline"></ion-icon>
+                    <input class="icon volume" type="range" step="1" value="0" min="0" max="100" required>
+                    <ion-icon class="icon options" name="options-outline" onclick="openNav()"></ion-icon>
+                    <!-- tab slide  -->
+                    <div id="mySidetab" class="sidetab">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div>
+                            <ul>
+                                <li><a href="#">
+                                    <img src="./accsets/imgsinger/phatho.jpg" alt="" style="width:45px;height: 45px;">
+                                    <h3>Yêu là cưới</h3>
+                                    <p>Phát Hồ</p>
+                                    
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+             
+                    <!-- <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a> -->
+                </div>
+                <!-- js slide nav -->
+                <script>
+                    function openNav() {
+                      document.getElementById("mySidetab").style.width = "300px";
+                    }
+                    
+                    function closeNav() {
+                      document.getElementById("mySidetab").style.width = "0";
+                    }
+                </script>
+              
+            </div>
 
               <div class="line-mussic">
                 <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
@@ -903,6 +994,7 @@
 
     <footer>
         
+        
     </footer>
 
     
@@ -1013,6 +1105,12 @@
                 singer: "Phat Ho",
                 path: "./music/yeulacuoi.mp3",
                 image: "./accsets/imgsinger/phatho.jpg"
+            },
+            {
+                name: "Save me",
+                singer: "DEAMN",
+                path: "./music/saveme.mp3",
+                image: "./accsets/imgsinger/saveme.jpg"
             },
             {
                 name: "On My Way",

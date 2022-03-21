@@ -32,7 +32,7 @@ nav{
   position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
   top: 0; /*Nằm trên cùng*/
   left: 0; /*Nằm sát bên trái*/
-  z-index: 100; /*Hiển thị lớp trên cùng*/
+  z-index: 10; /*Hiển thị lớp trên cùng*/
   
 }
 nav .menu{
@@ -142,15 +142,100 @@ nav .menu .bar-row{
   opacity: 0.9;
 }
 
-/* .menu ul li:nth-child(14){
-  position:fixed;
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000000; /* Sit on top */
+  padding-top: 60px; /* Location of the box */
   left: 0;
-  bottom: 1em;
-  border-top: 1px solid rgb(99, 92, 98);
-  width: calc(242px + 28px);
-  margin-left: -28px; 
-  padding-left: calc(28px * 2);
-} */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: linear-gradient(45deg, rgb(111,10,148),rgb(187,8,112));
+  margin: auto;
+  width: 700px;
+  height: 575px;
+  border-radius: 10px;
+ 
+}
+
+.ctn-modal{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.modal-content .logo-modal{
+  height: 80px;
+  width: 80px;
+}
+
+.modal .vip-month{
+  width: 200px;
+  height: 315px;
+  margin: 0 15px 0 15px;
+  border-radius: 35px;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 5px 15px #333;
+
+}
+.modal .vip-month:hover{
+  box-shadow: 0px 5px 15px #ccc;
+
+}
+
+.modal-content h1{
+
+  margin-top: -8px;
+  font-size: 28px;
+  color: #fff;
+  padding-bottom: 10px;
+  
+}
+
+.modal-content .vipcode{
+  margin-top: 22px;
+  width: 660px;
+  height: 100px;
+  border-radius: 12px;
+  transition: all 0.1s ease;
+  opacity: 0.9;
+
+}
+
+.modal-content .vipcode:hover{
+  opacity: 1;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 0;
+  color: #aaaaaa;
+  padding-right: 12px;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .menu .playlist{
   color: #fff;
@@ -187,7 +272,7 @@ header{
   position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
   top: 0; /*Nằm trên cùng*/
   left: 0; /*Nằm sát bên trái*/
-  z-index: 100000; /*Hiển thị lớp trên cùng*/
+  z-index: 9; /*Hiển thị lớp trên cùng*/
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -940,7 +1025,7 @@ html {
 .dashboard {
   position: fixed;
   bottom: 0;
-  z-index: 10000;
+  z-index: 10;
   padding: 16px 16px 14px;
   background: #120C1C;
   width: 100%;
@@ -1049,8 +1134,7 @@ header1 h2 {
 }
 
 .control-sub .icon:active{
-  opacity: 0.8;
-  color: red;
+  color: #432275;
 }
 .control-sub .icon:hover{
   opacity: 0.8;
@@ -1160,3 +1244,67 @@ header1 h2 {
   color: #999;
   font-size: 18px;
 } */
+
+
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.sidetab {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidetab h3{
+  padding-left: 60px;
+  margin-top: -70px;
+}
+.sidetab p{
+  padding-left: 60px;
+  margin-top: -12px;
+}
+
+.sidetab a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidetab a:hover {
+  color: #f1f1f1;
+}
+
+.sidetab .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
