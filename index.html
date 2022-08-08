@@ -323,7 +323,17 @@
                     <ion-icon class="icon name1" name="tv-outline"></ion-icon>
                     <ion-icon class="icon name2" name="eyedrop-outline"></ion-icon>
                     <ion-icon class="icon name3" name="volume-medium-outline"></ion-icon>
-                    <input class="icon volume" type="range" step="1" value="0" min="0" max="100" required>
+                    <div class="volume-panel">
+                        <div class="input-div">
+                            <div class="volume-input-div">
+                                <input type="range" value="100" step="5">
+                                <div class="volume-progress"></div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- <input class="icon volume" type="range" step="5" value="100" min="0" max="100" required> -->
                     <ion-icon class="icon options" name="options-outline" onclick="openNav()"></ion-icon>
                     <!-- tab slide  -->
                     <div id="mySidetab" class="sidetab">
@@ -1387,6 +1397,19 @@
         
         app.start();
         
+    </script>
+    <script>
+        let track = document.createElement("audio");
+        const volumePanel = document.querySelector('.volume-panel'); 
+        const volumeRange = volumePanel.querySelector('input'); 
+        const volumeProgress = volumePanel.querySelector('.volume-progress');
+        // xử lí hiện thí phần % của thanh progress
+        volumeRange.addEventListener('input', function(e){
+            volumeProgress.style.width = volumeRange.value + '%';
+            audio.volume = volumeRange.value / 100;
+        }, false);
+
+
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
