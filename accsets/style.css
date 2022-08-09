@@ -1026,8 +1026,8 @@ html {
 .dashboard {
   position: fixed;
   bottom: 0;
-  z-index: 10;
-  padding: 16px 16px 14px;
+  z-index: 100;
+  padding: 0 16px;
   background: #120C1C;
   width: 100%;
   height: 90px;
@@ -1038,30 +1038,31 @@ html {
 /* HEADER */
 header1 {
   position: absolute;
+  height: 100%;
   margin-left: 80px;
-  padding-top: 8px;
-
+  /* background: blueviolet; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
-header1 h4 {
+/* header1 h4 {
   color: #ccc;
   font-size: 12px;
-}
+} */
 
-header1 h2 {
-  color: #fff;
-  font-size: 18px;
-  padding-top: 5px;
-
-}
 
 /* CD */
 .cd {
   position: absolute;
-  display: flex;
   width: 65px;
-  margin-top: -5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
 }
 
 .cd-thumb {
@@ -1071,7 +1072,58 @@ header1 h2 {
   background-color: #333;
   background-size: cover;
   margin: auto;
+  display: flex;
+  align-items: center;
 } 
+
+/* Reaction */
+.icon-cover{
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-cover .contain-name{
+  height: 100%;
+}
+.icon-cover .name-song {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 12px;
+  letter-spacing: 1px;
+
+
+}
+.icon-cover .name-singer {
+  color: #FFFFFF80;
+  font-size: 12px;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  font-weight: normal;
+
+}
+.icon-cover .name-singer:hover {
+  color: #c662ef;
+  text-decoration: underline;
+}
+
+.control-sub .icon,
+.icon-cover .icon-heart, 
+.icon-cover .icon-ellipses{
+  color: #fff;
+  font-size: 14px;
+  margin-left: 4px;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+
+}
+
 
 /* CONTROL */
 .control {
@@ -1083,20 +1135,33 @@ header1 h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  margin-top: -15px;
+  margin-top: -16px;
   padding: 12px 0 5px 0;
+  z-index: 1000;
 } 
 
 
 .control .btn {
   color: #fff;
-  padding: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   font-size: 15px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.2s;
 }
+.control .btn:hover {
+  background: #31204a;
+}
+
 
 .control .btn-toggle-play:hover {
   border: 2px solid rgb(176,101,218);
   color: rgb(176,101,218);
+  background: transparent;
 }
 
 .control .btn.active {
@@ -1115,15 +1180,6 @@ header1 h2 {
   justify-content: center;
 }
 
-.control-sub{
-  color: #fff;
-  padding: 16px;
-  /* float: right; */
-  margin-right: -20px;
-  display: flex;
-  justify-content: right;
-
-}
 [type="range"]{
   margin: 0;
   padding: 0;
@@ -1131,18 +1187,20 @@ header1 h2 {
   height: 1.5em;
   background: transparent;
   outline: none;
+
 }
 
 [type="range"],
 [type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
+
 }
 
 [type="range"]::-webkit-slider-thumb{
   box-sizing: border-box;
   border: none;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #fff;
 }
@@ -1150,8 +1208,8 @@ header1 h2 {
 [type="range"]::-moz-range-thumb{
   box-sizing: border-box;
   border: none;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #fff;
 }
@@ -1159,14 +1217,17 @@ header1 h2 {
 .volume-panel{
   position: relative;
   width: 70px;
+
 }
+
 
 .volume-panel .input-div{
   position: absolute;
   top: 50%;
   width: 70px;
-  height: 3px;
+  height: 2.5px;
   cursor: pointer;
+
 
 }
 
@@ -1175,19 +1236,24 @@ header1 h2 {
   width: 100%;
   height: 100%;
   background: #424244;
+  border-radius: 10px;
+
 }
 
 .volume-input-div input{
   position: absolute;
   top: -8.5px;
   cursor: pointer;
+
+
 }
 .volume-input-div .volume-progress{
   background: #fff;
-  width: 70px;
+  width: 50px;
   height: 100%;
-}
+  border-radius: 10px;
 
+}
 
 .volume{
   width: 65px;
@@ -1195,11 +1261,23 @@ header1 h2 {
   cursor: pointer;
 
 }
-.control-sub .icon{
-  margin-left: 10px;
-  font-size: 20px;
+.control-sub{
+  color: #fff;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: -3;
 
 }
+
+.icon-cover .icon-heart:hover, 
+.icon-cover .icon-ellipses:hover,
+.control-sub .icon:hover{
+  background: #31204a;
+
+}
+
 
 .control-sub .icon:active{
   color: #432275;
@@ -1210,7 +1288,8 @@ header1 h2 {
 
 .control-sub .options{
   border-left: 1px solid #ccc;
-  padding-left: 10px ;
+  height: 20px;
+  margin: 0 12px;
 }
 
 .line-mussic{
@@ -1219,7 +1298,7 @@ header1 h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: -1;
+  z-index: 10;
   
 }
 .progress {
@@ -1252,20 +1331,21 @@ header1 h2 {
 
 /* PLAYLIST */
 
-/* .playlist {
-  margin-top: 408px;
+.playlist {
+  /* margin-top: 408px; */
   padding: 12px;
+  margin-left: 100px;
 
-}  */
+} 
 
 
 
-/* .song {
+.song {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
   background-color: #fff;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
@@ -1284,13 +1364,13 @@ header1 h2 {
   color: #fff;
 }
 
-.song .thumb {
+/* .song .thumb {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-size: cover;
   margin: 0 8px;
-}
+} */
 
 .song .body {
   flex: 1;
@@ -1298,7 +1378,7 @@ header1 h2 {
 }
 
 .song .title {
-  font-size: 18px;
+  font-size: 12px;
   color: var(--text-color);
 }
 
@@ -1311,7 +1391,7 @@ header1 h2 {
   padding: 16px 8px;
   color: #999;
   font-size: 18px;
-} */
+}
 
 
 
@@ -1334,7 +1414,7 @@ header1 h2 {
   transition: 0.5s;
   padding-top: 60px;
 }
-.sidetab img{
+/* .sidetab img{
   width:45px;
   height: 45px;
   align-items: center;
@@ -1358,12 +1438,12 @@ header1 h2 {
   color: #ccc;
   display: block;
   transition: 0.2s;
-}
+} */
 
 /* .sidetab a:hover {
   color: #f1f1f1;
 } */
-.sidetab ul li{
+/* .sidetab ul li{
   margin: auto;
   padding: 0 10px 0 10px;
 
@@ -1372,7 +1452,7 @@ header1 h2 {
   border-radius: 5px;
   background: #252525;
   color: #fff;
-}
+} */
 
 .sidetab .closebtn {
   position: absolute;

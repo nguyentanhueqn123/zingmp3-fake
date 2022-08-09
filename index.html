@@ -284,15 +284,27 @@
 
               <!-- Header -->
                 <header1>
-                <h4>Đang Phát :</h4>
-                <h2>hue nguyen</h2>
+                    <!-- <h4>Đang Phát :</h4> -->
+                    
+                    <!-- Reaction -->
+                    <div class="icon-cover">
+                        <div class="contain-name">
+                            <h2 class="name-song">hue nguyen</h2>
+                            <h3 class="name-singer">pichu</h3>
+                        </div>
+                        <i class="fa-regular fa-heart icon-heart"></i>
+                        <i class="fa-solid fa-ellipsis icon-ellipses"></i>
+                        
+                    </div>
                 </header1>
           
               <!-- CD -->
                 <div class="cd">
-                <div class="cd-thumb">
+                    <div class="cd-thumb">
+                    </div>
+                    
                 </div>
-                </div>
+                
               
               <!-- Control -->
                 <div class="control">
@@ -319,62 +331,58 @@
                 </div>
 
                 <div class="control-sub">
-
-                    <ion-icon class="icon name1" name="tv-outline"></ion-icon>
-                    <ion-icon class="icon name2" name="eyedrop-outline"></ion-icon>
-                    <ion-icon class="icon name3" name="volume-medium-outline"></ion-icon>
+                    <i class="fa-solid fa-tv icon"></i>
+                    <i class="fa-solid fa-microphone icon"></i>
+                    <i class="fa-solid fa-volume-high icon"></i>
                     <div class="volume-panel">
                         <div class="input-div">
                             <div class="volume-input-div">
-                                <input type="range" value="100" step="5">
+                                <input type="range" value="80" step="5">
                                 <div class="volume-progress"></div>
 
                             </div>
                         </div>
                         
                     </div>
+                    <i class="options"></i>
                     <!-- <input class="icon volume" type="range" step="5" value="100" min="0" max="100" required> -->
-                    <ion-icon class="icon options" name="options-outline" onclick="openNav()"></ion-icon>
+                    <ion-icon class="icon-options" name="options-outline" onclick="openNav()"></ion-icon>
                     <!-- tab slide  -->
-                    <div id="mySidetab" class="sidetab">
+                    <!-- <div id="mySidetab" class="sidetab">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <div>
                             <ul>
-                                <li><a href="#">
-                                    <img src="./accsets/imgsinger/phatho.jpg">
-                                    <h3>Yêu là cưới</h3>
-                                    <p>Phát Hồ</p>
-                                    
+                                <li>
+                                    <a href="#">
+                                        <img src="./accsets/imgsinger/phatho.jpg">
+                                        <h3 class="tab-name">Yêu là cưới</h3>
+                                        <p>Phát Hồ</p>
                                     </a>
                                 </li>
                                 
                             </ul>
                         </div>
              
-                    <!-- <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a> -->
-                </div>
-                <!-- js slide nav -->
-                <script>
-                    function openNav() {
-                      document.getElementById("mySidetab").style.width = "300px";
-                    }
-                    
-                    function closeNav() {
-                      document.getElementById("mySidetab").style.width = "0";
-                    }
-                </script>
+                        
+                    </div> -->
+                    <!-- js slide nav -->
+                    <script>
+                        function openNav() {
+                        document.getElementById("mySidetab").style.width = "300px";
+                        }
+                        
+                        function closeNav() {
+                        document.getElementById("mySidetab").style.width = "0";
+                        }
+                    </script>
               
-            </div>
+                </div>
 
-              <div class="line-mussic">
-                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-
-              </div>
+                <div class="line-mussic">
+                    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                </div>
           
-              <audio id="audio" src=""></audio>
+                <audio id="audio" src=""></audio>
             </div>
           
             <!-- Playlist -->
@@ -1092,6 +1100,9 @@
         const player = $(".player");
         const cd = $(".cd");
         const heading = $("header1 h2");
+        // test 
+        const headingname = $("header1 h3");
+
         const cdThumb = $(".cd-thumb");
         const audio = $("#audio");
         const playBtn = $(".btn-toggle-play");
@@ -1113,7 +1124,7 @@
           songs: [
             {
                 name: "Yêu Là Cưới",
-                singer: "Phat Ho",
+                singer: "Phát Hồ",
                 path: "./music/yeulacuoi.mp3",
                 image: "./accsets/imgsinger/phatho.jpg"
             },
@@ -1154,43 +1165,68 @@
             // (2/2) Uncomment the line below to use localStorage
             // localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
           },
+
+            // render: function () {
+            //         const htmls = this.songs.map((song, index) => {
+            //         return `
+            //                             <div class="song ${
+            //                             index === this.currentIndex ? "active" : ""
+            //                             }" data-index="${index}">
+            //                                 <div class="thumb"
+            //                                     style="background-image: url('${song.image}')">
+            //                                 </div>
+            //                                 <div class="body">
+            //                                     <h3 class="title">${song.name}</h3>
+            //                                     <p class="author">${song.singer}</p>
+            //                                 </div>
+            //                                 <div class="option">
+            //                                     <i class="fas fa-ellipsis-h"></i>
+            //                                 </div>
+            //                             </div>
+            //                         `;
+            //         });
+            //         playlist.innerHTML = htmls.join("");
+            //     },
           
 
         // list nhạc 
-        //   render: function () {
-        //     const htmls = this.songs.map((song, index) => {
-        //       return `
-        //                         <div class="song ${
-        //                           index === this.currentIndex ? "active" : ""
-        //                         }" data-index="${index}">
-        //                             <div class="thumb"
-        //                                 style="background-image: url('${song.image}')">
-        //                             </div>
-        //                             <div class="body">
-        //                                 <h3 class="title">${song.name}</h3>
-        //                                 <p class="author">${song.singer}</p>
-        //                             </div>
-        //                             <div class="option">
-        //                                 <i class="fas fa-ellipsis-h"></i>
-        //                             </div>
-        //                         </div>
-        //                     `;
-        //     });
-        //     playlist.innerHTML = htmls.join("");
-        //   },
+            render: function () {
+                const htmls = this.songs.map((song, index) => {
+                return `
+                                    <div class="song ${
+                                    index === this.currentIndex ? "active" : ""
+                                    }" data-index="${index}">
+                                        
+                                        <div id="mySidetab" class="sidetab">
+                                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                                    
+                                                <div class="thumb"
+                                                    style="background-image: url('${song.image}')">
+                                                </div>
+                                                <div class="noname">
+                                                    <h3 class="title">${song.name}</h3>
+                                                    <p class="author">${song.singer}</p>
+                                                </div>
+                                        </div>
+                                        
+                                    </div>
+                                `;
+                });
+                playlist.innerHTML = htmls.join("");
+            },
 
 
 
-          defineProperties: function () {
-            Object.defineProperty(this, "currentSong", {
-              get: function () {
-                return this.songs[this.currentIndex];
-              }
-            });
-          },
-          handleEvents: function () {
-            const _this = this;
-            const cdWidth = cd.offsetWidth;
+            defineProperties: function () {
+                Object.defineProperty(this, "currentSong", {
+                get: function () {
+                    return this.songs[this.currentIndex];
+                }
+                });
+            },
+            handleEvents: function () {
+                const _this = this;
+                const cdWidth = cd.offsetWidth;
         
             // Xử lý CD quay / dừng
             // Handle CD spins / stops
@@ -1337,6 +1373,7 @@
             }, 300);
           },
           loadCurrentSong: function () {
+            headingname.textContent = this.currentSong.singer;
             heading.textContent = this.currentSong.name;
             cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
             audio.src = this.currentSong.path;
@@ -1409,6 +1446,7 @@
             audio.volume = volumeRange.value / 100;
         }, false);
 
+        
 
     </script>
 
