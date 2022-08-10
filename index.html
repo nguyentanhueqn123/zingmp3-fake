@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./font/fontawesome-free-6.0.0-web/css/all.css">
     <link rel="stylesheet" href="./accsets/style.css">
     <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
     
@@ -354,28 +360,19 @@
                         <!-- Playlist -->
                         <div class="playlist">
                         </div>
-                        <!-- <div>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="./accsets/imgsinger/phatho.jpg">
-                                        <h3 class="tab-name">Yêu là cưới</h3>
-                                        <p>Phát Hồ</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> -->
+                        
                         
                     </div>
                     <!-- js slide nav -->
                     <script>
                         function openNav() {
-                        document.getElementById("mySidetab").style.width = "300px";
+                        document.getElementById("mySidetab").style.width = "330px";
                         }
                         
                         function closeNav() {
                         document.getElementById("mySidetab").style.width = "0";
                         }
+                        
                     </script>
               
                 </div>
@@ -396,64 +393,35 @@
     <content>   
         <div class="container-content">
             <div class="container-name">
-                <div class="slide-container">
-                    <div class="img-content">
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img1.jpg" alt="">
-                            
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img2.jpg" alt="">
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img3.jpg" alt="">
-                            
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                    </div>
+                <!-- slide  -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img1.jpg" alt="">
+                      </div>
 
-                    <div class="img-content">
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img2.jpg" alt="">
-                            
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img1.jpg" alt="">
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                        <figure class="snip1573">
-                            <img src="./accsets/img/img4.jpg" alt="">
-                            
-                            <figcaption>
-                                <ion-icon name="play-circle-outline" class="play-icon"></ion-icon>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img2.jpg" alt="">                            
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img3.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img4.jpg" alt="">
+
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img3.jpg" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./accsets/img/img2.jpg" alt="">                            
+                      </div>
+                      
                     </div>
-    
-                </div>
-                <div class="btn-slider-top">
-                    <ion-icon class="icon-slider-top left" name="chevron-back-circle-outline" onclick="plusDivs(-1)"></ion-icon>
-                    <ion-icon class="icon-slider-top right" name="chevron-forward-circle-outline" onclick="plusDivs(1)"></ion-icon>
-                </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                  </div>
 
             </div>
             
@@ -1160,6 +1128,7 @@
                 path: "./music/anhdalacvao.mp3",
                 image: "./accsets/imgsinger/anhda.jpg"
             },
+            
            
           ],
           setConfig: function (key, value) {
@@ -1416,6 +1385,8 @@
         app.start();
         
     </script>
+
+    <!-- tăng giảm âm thanh -->
     <script>
         let track = document.createElement("audio");
         const volumePanel = document.querySelector('.volume-panel'); 
@@ -1427,13 +1398,35 @@
             audio.volume = volumeRange.value / 100;
         }, false);
 
-        
-
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!--TEST Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
     
 </body>
 </html>

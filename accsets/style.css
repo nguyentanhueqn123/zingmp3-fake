@@ -496,7 +496,6 @@ content{
   height: 390px;
 } 
 
-
 .slide-container{
   position: relative;
   height: 212px;
@@ -504,65 +503,13 @@ content{
 }
 
 
-.img-content{
-  position: absolute;
-  margin-left: 15px;
-  /* animation: slide 12s ease infinite; */
-}
-.img-content img{
-  width: 375px;
-  height: 212px;
-  border-radius: 9px;
-}
-
-@keyframes slide {
-  20% {margin-left: 0px;}
-  30% {margin-left: -375px;}
-  50% {margin-left: -375px;}
-  60% {margin-left: -750px;}
-  70% {margin-left: -750px;}
-  80% {margin-left: -1500px;}
-  90% {margin-left: -1500px;}
-}
 
 .container-content img{
   margin-right: 25px;
   
 }
 
-.btn-slider-top{
-  width: 100%;
-  position: absolute;
-  display: flex;
-  top: 19%;
-  justify-content: space-between;
-  width: 100%; 
-  z-index: 5;
-  cursor: pointer;
 
-} 
-
-.btn-slider-top .left{
-  margin-left: 20px;
-}
-
-.btn-slider-top .right{
-  margin-right: 40px;
-}
-
-.btn-slider-top .icon-slider-top{
-  color: rgb(211, 209, 209);
-  font-size: 60px;
-  opacity: 0;
-  transition: all 0.2s ease;
-}
-.container-name:hover .btn-slider-top .icon-slider-top{
-  opacity: 1;
-}
-
-.container-name:hover .btn-slider-top .icon-slider-top:hover{
-  opacity: 0.6;
-}
 
 /* begin banner ads  */
 .container-content .banner-content{
@@ -914,80 +861,17 @@ content{
  
 
 
-.snip1573 {
-  background-color: #000;
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  max-width: 375px;
-  max-height: 212px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  border-radius: 9px;
-
-}
-
-.snip1573 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-}
-
-.snip1573 img {
-  backface-visibility: hidden;
-  max-width: 100%;
-  vertical-align: top;
-}
-
-.snip1573 figcaption {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  z-index: 2;
-  -webkit-transform: translate(-50%, -50%) scale(0.5);
-  transform: translate(-50%, -50%) scale(0.5);
-  opacity: 0;
-
-}
-
-.snip1573 .play-icon{
-  font-size: 70px;
-  color: #fff;
-}
 
 
-.snip1573 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-}
 
-/* .snip1573:hover > img,
-.snip1573.hover > img {
-  opacity: 0.6;
-}
 
-.snip1573:hover figcaption,
-.snip1573.hover figcaption {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-} */
+
+
+
 
 
 
 /* end main content */
-
-
-
-
-
 
 
 
@@ -1446,7 +1330,7 @@ header1 {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: -1;
+  z-index: -200;
   top: 0;
   right: 0;
   background-color: #111;
@@ -1462,6 +1346,62 @@ header1 {
   font-size: 36px;
   margin-left: 50px;
 }
+
+
+
+
+.swiper {
+  left: -12px;
+  width: 1180px;
+  height: 210px;
+  border-radius: 9px;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+
+
+.swiper-slide img{
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 26px;
+
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next{
+  transition: all ease 0.2s;
+  display: none;
+  
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next{
+  display: block;
+  background: #ccc;
+  width: 58px;
+  height: 58px;
+  opacity: 0.6;
+  border-radius: 50%;
+  padding: 8px;
+  
+}
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-next:hover{
+  opacity: 0.4;
+  
+}
+
+
 
 
 
